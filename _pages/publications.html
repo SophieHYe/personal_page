@@ -6,31 +6,89 @@ author_profile: true
 ---
 
 {% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+<div class="wordwrap"> For a complete list, please visit <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
 {% endif %}
+
+
+<h3>Code Agents </h3>
+<ul style="font-size: 0.95em;">
+  <li>
+    <a href="https://www.arxiv.org/pdf/2507.19942" target="_blank">
+      Prometheus: Unified Knowledge Graphs for Issue Resolution in Multilingual Codebases
+    </a>.
+    Zimin Chen, Yue Pan, Siyu Lu, Jiayi Xu, Claire Le Goues, Martin Monperrus, He Ye.
+    <span style="font-style: italic;"> Arxiv 2025.</span>
+  </li>
+
+  <li style="margin-top:0.4em;">
+    <a href="https://arxiv.org/abs/2511.00197" target="_blank">
+      Understanding Code Agent Behaviour: An Empirical Study of Success and Failure Trajectories
+    </a>.
+    Oorja Majgaonkar, Zhiwei Fei, Xiang Li, Federica Sarro, He Ye. <span style="font-style: italic;"> Arxiv 2025.</span>
+  </li>
+  <li style="margin-top:0.4em;">
+    <a href="https://dl.acm.org/doi/abs/10.1145/3728939" target="_blank">
+      AdverIntent-Agent: Adversarial Reasoning for Repair Based on Inferred Program Intent
+    </a>.
+     He Ye, Aidan ZH Yang, Chang Hu, Yanlin Wang, Tao Zhang, Claire Le Goues. <span style="font-style: italic;"> Proceedings of the ACM on Software Engineering 2 (ISSTA), 1398-1420, 2025.</span>
+  </li>
+
+  <li style="margin-top:0.4em;">
+    <a href="https://ojs.aaai.org/index.php/AAAI/article/view/29946" target="_blank">
+      MemoryBank: Enhancing Large Language Models with Long-Term Memory
+    </a>.
+    Wanjun Zhong, Lianghong Guo, Qiqi Gao, He Ye, Yanlin Wang <span style="font-style: italic;"> Proceedings of the 38th AAAI Conference on Artificial Intelligence, 38(17), 19724-19731.</span>
+  </li>
+
+
+</ul>
+
+<h3>Model Post-Training and Reasoning</h3>
+<ul style="font-size: 0.95em;">
+  <li style="margin-top:0.4em;">
+    <a href="https://arxiv.org/abs/2507.17548" target="_blank">
+      CodeReasoner: Enhancing the Code Reasoning Ability with Reinforcement Learning
+    </a>.
+    Lingxiao Tang, He Ye, Zhongxin Liu, Xiaoxue Ren, Lingfeng Bao. <span style="font-style: italic;"> Arxiv 2025.</span>
+  </li>
+  <li style="margin-top:0.4em;">
+    <a href="https://arxiv.org/abs/2406.05892" target="_blank">
+      Security vulnerability detection with multitask self-instructed fine-tuning of large language models
+    </a>.
+    Aidan ZH Yang, Haoye Tian, He Ye, Ruben Martins, Claire Le Goues. <span style="font-style: italic;"> Arxiv 2024.</span>
+  </li>
+</ul>
+
+
+<h3>Learning-based Automated Program Repair</h3>
+<ul style="font-size: 0.95em;">
+  <li style="margin-top:0.4em;">
+    <a href="https://dl.acm.org/doi/abs/10.1145/3597503.3623337" target="_blank">
+      Iter: Iterative neural repair for multi-location patches
+    </a>.
+    He Ye, Martin Monperrus. <span style="font-style: italic;"> Proceedings of the 46th IEEE/ACM international conference on software engineering,2024.</span>
+  </li>
+  <li style="margin-top:0.4em;">
+    <a href="https://arxiv.org/abs/2406.05892" target="_blank">
+      Neural program repair with execution-based backpropagation
+    </a>.
+    He Ye, Matias Martinez, Martin Monperrus. <span style="font-style: italic;"> Proceedings of the 44th international conference on software engineering,2022.</span>
+  </li>
+  <li style="margin-top:0.4em;">
+    <a href="https://dl.acm.org/doi/abs/10.1145/3551349.3556926" target="_blank">
+      Selfapr: Self-supervised program repair with test execution diagnostics
+    </a>.
+    He Ye, Matias Martinez, Xiapu Luo, Tao Zhang, Martin Monperrus. <span style="font-style: italic;"> Proceedings of the 37th IEEE/ACM International Conference on Automated Software Engineering,2022.</span>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
 
 {% include base_path %}
-
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
-
-
 
